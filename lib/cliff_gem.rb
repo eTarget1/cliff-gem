@@ -1,5 +1,2 @@
-require "cliff_gem/version"
-
-module CliffGem
-  # Your code goes here...
-end
+require_relative "./cliff_gem/version"
+require_relative "./daily-Webcam/cli"
