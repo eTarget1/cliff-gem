@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require "./lib/daily-Webcam"
+require_relative "../lib/cliff_gem.rb"
 
 CliffGem::CLI.new.call

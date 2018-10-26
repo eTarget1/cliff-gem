@@ -1,4 +1,3 @@
-# Our CLI Controller
 class CliffGem::CLI
 
   def call
