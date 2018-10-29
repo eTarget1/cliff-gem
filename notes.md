@@ -16,3 +16,11 @@ Show a list of products
 
 what product do you want to have more info?
 1
+
+whatis a deal?
+
+A deal has a Name
+A deal has price
+A deal has a URL
+A deal has an avaibility
+

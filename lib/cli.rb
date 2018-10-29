@@ -2,16 +2,14 @@ class CliffGem::CLI
 
   def call
     list_deals
-    menu
+     menu
     goodbye
   end
 
   def list_deals
-    puts "welcome, today's the daily-Webcam."
-    puts <<-DOC.gsub!(/^\s+|\s+$/, "")
-      1 Webcam 720P HD -  Colour Name: HD92 720P  - £14.99
-      2  Mpow PC Headset - Colour Name: Black - £18.99
-    DOC
+     puts "welcome, today's the daily-Webcam."
+
+     @deal = CliffGem::Deal.today
   end
 
   def menu
@@ -33,7 +31,7 @@ class CliffGem::CLI
   end
 
   def goodbye
-    puts "See you tomorrow for more deal."
+    puts "See you tomorrow for more deal!!!"
   end
 
 end
