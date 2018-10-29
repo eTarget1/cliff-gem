@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
-require_relative "../lib/cliff_gem.rb"
-
+# require_relative "../lib/cliff_gem.rb"
+# require "cliff_gem"
+require "bundler/setup"
+require "cliff_gem"
 CliffGem::CLI.new.call
