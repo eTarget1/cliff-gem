@@ -1,5 +1,5 @@
 class CliffGem::Deal
-  attr_accessor :name,:price, :avaibility, :url, :color
+  attr_accessor :name, :price, :avaibility, :url,
 
   def self.today
     # puts "this workd now!"
@@ -13,11 +13,8 @@ class CliffGem::Deal
     #deals << self.scrape_headset
 
     deals
-
-
     # deal_1 = self.new
     #  deal_1.name = "Webcam 720P HD"
-    #  deal_1.color = "HD92 720P"
     #  deal_1.price = "£14.99"
     #  deal_1.avaibility = true
     #  deal_1.url ="https://www.amazon.co.uk/dp/B01NAKVPDJ/ref=sspa_dk_detail_1?psc=1&pd_rd_i=B01NAKVPDJ&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_p=8e5be0e3-b258-4b06-8b6e-695b24f935a4&pf_rd_r=G1DJ38QMFG7W431TSCH0&pd_rd_wg=G8iCC&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&pd_rd_w=lOZP1&pf_rd_i=desktop-dp-sims&pd_rd_r=b4e0d20b-d861-11e8-be6c-5d68b767c2a7"
@@ -34,8 +31,11 @@ class CliffGem::Deal
 
   end
 
-  # def self.scrape_cam
-  #   doc = Nokogiri::HTML(open("https://www.amazon.co.uk/dp/B01NAKVPDJ/ref=sspa_dk_detail_1?psc=1&pd_rd_i=B01NAKVPDJ&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_p=8e5be0e3-b258-4b06-8b6e-695b24f935a4&pf_rd_r=G1DJ38QMFG7W431TSCH0&pd_rd_wg=G8iCC&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&pd_rd_w=lOZP1&pf_rd_i=desktop-dp-sims&pd_rd_r=b4e0d20b-d861-11e8-be6c-5d68b767c2a7"))
-  #   binding.pry
-  # end
+  def self.scrape_cam
+     doc = Nokogiri::HTML(open("https://www.amazon.co.uk/dp/B01NAKVPDJ/ref=sspa_dk_detail_1?psc=1&pd_rd_i=B01NAKVPDJ&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_p=8e5be0e3-b258-4b06-8b6e-695b24f935a4&pf_rd_r=G1DJ38QMFG7W431TSCH0&pd_rd_wg=G8iCC&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&pd_rd_w=lOZP1&pf_rd_i=desktop-dp-sims&pd_rd_r=b4e0d20b-d861-11e8-be6c-5d68b767c2a7"))
+
+     name = doc.css("#productTitle").text.strip
+     price = doc.css("#price_inside_buybox").text.strip
+     binding.pry
+   end
 end
