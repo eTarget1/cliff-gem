@@ -1,5 +1,5 @@
 class CliffGem::Deal
-  attr_accessor :name, :price, :avaibility, :url, :color
+  attr_accessor :name, :price, :avaibility, :url, :color, :dimension, :weight
 
   def self.today
     # puts "this workd now!"
@@ -36,6 +36,9 @@ class CliffGem::Deal
      deal = self.new
      deal.name = doc.css("#productTitle").text.strip
      deal.price = doc.css("#price_inside_buybox").text.strip
+     deal.color = doc.css("div.attrG td.value").children[4].text
+     deal.dimension = doc.css("div.attrG td.value").children[2].text
+     deal.weight = doc.css("div.attrG td.value").children[1].text
      deal.avaibility = true
      deal
      #binding.pry
@@ -44,9 +47,11 @@ class CliffGem::Deal
    def self.scrape_headset
      doc = Nokogiri::HTML(open("https://www.amazon.co.uk/Mpow-Headset-Multi-Use-headset-Reduction/dp/B06XX7SYP2"))
      deal = self.new
-     deal.name = doc.css("#productTitle")
+     deal.name = doc.css("#productTitle").text.strip
       deal.price = doc.css("#price_inside_buybox").text.strip
-      deal.color = doc.css("#selection").text.strip
+      deal.color = doc.css("div.attrG td.value").children[4].text
+      deal.dimension = doc.css("div.attrG td.value").children[2].text
+      deal.weight = doc.css("div.attrG td.value").children[1].text
       deal.avaibility = true
 
       deal

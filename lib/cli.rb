@@ -11,7 +11,7 @@ class CliffGem::CLI
 
      @deals = CliffGem::Deal.today
      @deals.each.with_index(1) do |deal, i|
-       puts "#{i}.#{deal.name} - #{deal.price} - #{deal.avaibility}"
+       puts "#{i}.#{deal.name} - #{deal.price} - #{deal.color}- #{deal.dimension}- #{deal.weight} - #{deal.avaibility}"
   end
 
   def menu
@@ -22,7 +22,7 @@ class CliffGem::CLI
 
         if input.to_i > 0
           the_deal = @deals[input.to_i-1]
-          puts "#{the_deal.name} - #{the_deal.price} - #{the_deal.avaibility}"
+          puts "#{the_deal.name} - #{the_deal.price} #{the_deal.color}- #{the_deal.dimension} -#{the_deal.weight} #{the_deal.avaibility}"
 
           # puts @deals[input.to_i-1]
         elsif input == "list"
